@@ -1,0 +1,45 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int Tcilindro;
+    int qtdPedidos;
+
+    printf("Tamanho do cilindro: ");
+    scanf("%d", &Tcilindro);
+    
+    printf("Informe a quantidade de pedidos: ");
+    scanf("%d", &qtdPedidos);
+
+    int pedido[qtdPedidos];
+
+  
+    for (int i = 0; i < qtdPedidos; i++) {
+        printf("Informe o %d pedido de cilindro: ", i + 1);
+        scanf("%d", &pedido[i]);
+    }
+
+    int posicaoAtual = 0;
+
+    printf("FCFS:\n");
+    printf("Atendimento: %d\n", qtdPedidos);
+
+    for (int i = 0; i < qtdPedidos; i++) {
+        posicaoAtual = pedido[i];
+
+        printf("\nMarcando pedido na posicao: %d\n", posicaoAtual);
+
+        printf("Valores marcados:\n");
+        for (int j = 0; j < Tcilindro; j++) {
+            if (j == posicaoAtual) {
+                printf("| %d:XX |", j);
+            } else {
+                printf(" %d:00 |", j);
+            }
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+
