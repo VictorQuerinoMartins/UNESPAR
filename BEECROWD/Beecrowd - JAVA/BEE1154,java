@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class idades54 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+       int idade, cont = 0;
+       int somaidade= 0;
+        while(true) {
+            idade = sc.nextInt();
+
+            if(idade < 0) {
+                break;
+            }
+            somaidade += idade;
+            cont++;
+        }
+        if(cont == 0) {
+            System.out.println("Nenhum dado foi inserido.");
+        }else{
+            double mediaIdades = (double) somaidade / cont;
+            System.out.println(mediaIdades);
+        }
+    }
+}
