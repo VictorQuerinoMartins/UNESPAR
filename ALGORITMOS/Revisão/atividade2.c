@@ -1,0 +1,1 @@
+//Para o exercício anterior, implemente uma subrotina que, dado um novo valor, manipula e altera os valores de todas as ações.
