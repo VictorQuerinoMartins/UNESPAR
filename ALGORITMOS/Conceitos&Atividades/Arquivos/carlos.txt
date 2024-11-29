@@ -1,0 +1,5 @@
+Numero: 32
+Nome: carlos
+Curso: ccomp
+Nota 1: 100.00
+Nota 2: 56.00
