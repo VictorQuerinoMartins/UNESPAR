@@ -1,0 +1,14 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}",
+            "classPaths": [
+                "lib/mysql-connector-java-x.x.x.jar"
+            ]
+        }
+    ]
+}
