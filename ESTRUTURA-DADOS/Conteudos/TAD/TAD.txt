@@ -1,0 +1,7 @@
+O que é TAD ?
+
+__Tipo abstrato de dados__
+
+- Um tipo abstrato de dade=os nunca é acessado diretamente. Todo acesso independente da operaçao, é feito pormeio de suas funçoes e procedimentos.
+- Conjunto de Dados
+- Conjunto de operaçoes para manipular esses dados
