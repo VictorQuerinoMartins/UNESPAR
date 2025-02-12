@@ -43,7 +43,7 @@ void buscar_largura(int grafo[50][50],int numVert,int inicio){
     fila f;
     iniciar(&f);
 
-    printf("Ordem de visita BFS: ");
+    printf("Ordem de visita: ");
     enfileirar(&f, inicio);
     visitado[inicio] = 1;   // vertice inicial marcado como visitado
 
