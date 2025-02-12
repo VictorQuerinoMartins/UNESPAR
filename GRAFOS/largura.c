@@ -65,7 +65,7 @@ int main() {
     int numVert = 5; 
     int inicio = 0;   
 
-    int grafo[50][50] = {
+    int grafo[50][50] = {       //cada ponto é um vértice, e o número 1 indica que existe uma conexão entre eles
         {0, 1, 0, 1, 0},
         {1, 0, 1, 0, 1},
         {0, 1, 0, 0, 0},
