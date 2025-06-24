@@ -27,15 +27,15 @@ void mostraMem(Bloco blocos[], int numBlocos) {
 }
 
 void worstFit(Bloco blocos[], int numBlocos, int idProc, int tamProc) {
-    int indBloco = 0; 
-    int mmaiorEspc = INT_MIN; // O maior "espc" que a gente achar
+    int indBloco = -1; 
+    int maioEpscRestante = INT_MIN; // O maior "espc" que a gente achar
 
     printf("Processo %d quer %d KB. verificando o maior espaco disponivel...\n", idProc, tamProc);
 
     for (int i = 0; i < numBlocos; i++) {
         if (!blocos[i].ocupado && blocos[i].tam >= tamProc) {
-            if (blocos[i].tam - tamProc > mmaiorEspc) {
-                mmaiorEspc = blocos[i].tam - tamProc; // atualiza o maior espc rest
+            if (blocos[i].tam - tamProc > maioEpscRestante) {
+                maioEpscRestante = blocos[i].tam - tamProc; // atualiza o maior espc rest
                 indBloco = i; 
             }
         }
@@ -122,6 +122,7 @@ int main() {
     } while (escolha != 0);
 
     free(blocosMem); 
+    printf("Memoria desalocada !!!\n");
 
     return 0;
 }
