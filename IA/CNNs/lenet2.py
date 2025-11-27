@@ -1,38 +1,43 @@
+# -*- coding: utf-8 -*-
+
 import tensorflow as tf
 import matplotlib.pyplot as plt
 import numpy as np
 import os
 from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
 
-# 1. Definir o caminho para o seu dataset local
+# 1. Definir o caminho para a pasta principal do seu dataset
 base_dir = r"C:\Users\yguin\OneDrive\Documentos\GitHub\UNESPAR\IA\CNNs\ClassificadorDeVeiculos\dataset"
 
 # Validar se o caminho existe para evitar erros
 if not os.path.exists(base_dir):
     raise FileNotFoundError(
         f"O diretório especificado não foi encontrado: {base_dir}\n"
-        f"Verifique se o caminho está correto e se a estrutura de pastas (com 'train' e 'validation') existe dentro dele."
+        f"Verifique se o caminho está correto e se as pastas das classes (Carro, Caminhao, Van) estão dentro dele."
     )
 
-train_dir = os.path.join(base_dir, 'train')
-validation_dir = os.path.join(base_dir, 'validation')
-
-print(f"Usando diretório de treino: {train_dir}")
-print(f"Usando diretório de validação: {validation_dir}")
-
-# 2. Criar datasets de treino e validação
+# 2. Criar datasets de treino e validação AUTOMATICAMENTE
 IMG_SIZE = (150, 150)
 BATCH_SIZE = 32
+VALIDATION_SPLIT = 0.2  # Usaremos 20% dos dados para validação e 80% para treino
 
+print("Criando dataset de treino (80% dos dados)...")
 train_ds = tf.keras.utils.image_dataset_from_directory(
-    train_dir,
+    base_dir,
+    validation_split=VALIDATION_SPLIT,
+    subset="training",
+    seed=123,  # 'seed' garante que a divisão seja sempre a mesma, para reprodutibilidade
     image_size=IMG_SIZE,
     batch_size=BATCH_SIZE,
     label_mode='int'
 )
 
-test_ds = tf.keras.utils.image_dataset_from_directory(
-    validation_dir,
+print("Criando dataset de validação (20% dos dados)...")
+validation_ds = tf.keras.utils.image_dataset_from_directory(
+    base_dir,
+    validation_split=VALIDATION_SPLIT,
+    subset="validation",
+    seed=123, # O 'seed' DEVE ser o mesmo do treino para não haver sobreposição de dados
     image_size=IMG_SIZE,
     batch_size=BATCH_SIZE,
     label_mode='int',
@@ -41,7 +46,7 @@ test_ds = tf.keras.utils.image_dataset_from_directory(
 
 class_names = train_ds.class_names
 NUM_CLASSES = len(class_names)
-print("Classes encontradas:", class_names)
+print("\nClasses encontradas:", class_names)
 print(f"Número de classes: {NUM_CLASSES}")
 
 
@@ -62,20 +67,20 @@ plt.show()
 # 4. Otimizar dataset para desempenho
 AUTOTUNE = tf.data.AUTOTUNE
 train_ds = train_ds.cache().shuffle(1000).prefetch(buffer_size=AUTOTUNE)
-test_ds = test_ds.cache().prefetch(buffer_size=AUTOTUNE)
+validation_ds = validation_ds.cache().prefetch(buffer_size=AUTOTUNE)
 
 # 5. Criar modelo LeNet
 model = tf.keras.Sequential([
     # Normaliza os pixels da imagem para o intervalo [0, 1]
     tf.keras.layers.Rescaling(1./255, input_shape=(IMG_SIZE[0], IMG_SIZE[1], 3)),
-    tf.keras.layers.Conv2D(6, kernel_size=(5, 5), activation='sigmoid', padding='same'),     # 1ª Convolução: Extrai 6 tipos de características iniciais da imagem.
-    tf.keras.layers.MaxPooling2D(pool_size=(2, 2)),                          # 1º Pooling: Reduz o tamanho da imagem, mantendo as características mais importantes.
-    tf.keras.layers.Conv2D(16, kernel_size=(5, 5), activation='sigmoid'),           # 2ª Convolução: Extrai 16 características mais complexas dos mapas anteriores.
-    tf.keras.layers.MaxPooling2D(pool_size=(2, 2)),                                      # 2º Pooling: Reduz a dimensionalidade novamente.
-    tf.keras.layers.Flatten(),                                            # Flatten: Transforma a matriz de características em um vetor único para a classificação.
-    tf.keras.layers.Dense(120, activation='sigmoid'),                          # 1ª Camada Densa: Combina as características para aprender padrões (120 neurônios).
-    tf.keras.layers.Dense(84, activation='sigmoid'),                           # 2ª Camada Densa: Refina os padrões aprendidos pela camada anterior (84 neurônios).
-    tf.keras.layers.Dense(NUM_CLASSES, activation='softmax')                   # Camada de Saída: Classifica a imagem na categoria mais provável (softmax).
+    tf.keras.layers.Conv2D(6, kernel_size=(5, 5), activation='sigmoid', padding='same'),      # 1ª Convolução: Extrai 6 tipos de características iniciais da imagem.
+    tf.keras.layers.MaxPooling2D(pool_size=(2, 2)),                                           # 1º Pooling: Reduz o tamanho da imagem, mantendo as características mais importantes.
+    tf.keras.layers.Conv2D(16, kernel_size=(5, 5), activation='sigmoid'),                      # 2ª Convolução: Extrai 16 características mais complexas dos mapas anteriores.
+    tf.keras.layers.MaxPooling2D(pool_size=(2, 2)),                                           # 2º Pooling: Reduz a dimensionalidade novamente.
+    tf.keras.layers.Flatten(),                                                                # Flatten: Transforma a matriz de características em um vetor único para a classificação.
+    tf.keras.layers.Dense(120, activation='sigmoid'),                                         # 1ª Camada Densa: Combina as características para aprender padrões (120 neurônios).
+    tf.keras.layers.Dense(84, activation='sigmoid'),                                          # 2ª Camada Densa: Refina os padrões aprendidos pela camada anterior (84 neurônios).
+    tf.keras.layers.Dense(NUM_CLASSES, activation='softmax')                                  # Camada de Saída: Classifica a imagem na categoria mais provável (softmax).
 ])
 
 model.summary()
@@ -88,8 +93,9 @@ model.compile(optimizer=optimizer,
               metrics=['accuracy'])
 
 # 6. Treinar modelo
+# <<< MUDANÇA AQUI: Usamos o 'validation_ds' que criamos
 print("\nIniciando o treinamento do modelo...")
-history = model.fit(train_ds, validation_data=test_ds, epochs=20)
+history = model.fit(train_ds, validation_data=validation_ds, epochs=20)
 print("Treinamento finalizado.")
 
 # 7. Plotar Curva de Perda e Acurácia
@@ -116,11 +122,12 @@ plt.show()
 
 
 # 8. Gerar Matriz de Confusão
+# <<< MUDANÇA AQUI: Usamos o 'validation_ds' para gerar a matriz
 print("\nGerando Matriz de Confusão...")
 y_true = []
 y_pred = []
 
-for images, labels in test_ds:
+for images, labels in validation_ds: # Iteramos sobre o dataset de validação
     y_true.extend(labels.numpy())
     preds = model.predict(images)
     y_pred.extend(np.argmax(preds, axis=1))

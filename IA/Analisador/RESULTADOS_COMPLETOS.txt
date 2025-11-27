@@ -1,0 +1,423 @@
+RELATÓRIO FINAL - 10 ARTIGOS
+============================================================
+
+ARQUIVO: 3788-Versão Final-26399-1-10-20250304.pdf
+============================================================
+
+--- 1. Palavras-Chave (Do Autor) ---
+Hipertensão; Pressão Arterial; Chatbot; Mhealth; Educação em saúde
+
+--- 2. Top 10 Termos ---
+1. saude: 83
+2. arterial: 69
+3. pacientes: 57
+4. hipertensao: 55
+5. artigos: 44
+6. pressao: 36
+7. nao: 32
+8. estudo: 25
+9. sobre: 23
+10. search: 23
+
+--- 3. Referências ---
+- Referências Alvarez, A. A. (2015). Pacientes hipertensos na unidade básica de saúde VI: uma proposta de intervenção.[GS Search] Ashoorkhani, M., Bozorgi, A., Majdzadeh, R., Hosseini, H., Yoonessi, A.,...
+
+--- 4. Análise Semântica ---
+
+> OBJETIVO:
+  • Olevantamento de referências bibliográficas da revisão tem como objetivo de reunir informações econhecimentos sobre os benefícios e as limitações do uso de assistentes inteligentes de conversação (chatbots) como ferramenta para ações de educação em saúde eautomonitoramento de pacientes com Hipertensão Arterial Sistêmica.
+  • Ademais, com oobjetivo de refinar ainda mais os parâmetros de busca nas bases selecionadas, foram estabelecidos alguns critérios de inclusão eexclusão.
+
+> PROBLEMA:
+  • Considerando seu aspecto multifatorial, otratamento econtro le da HAS se torna um desafio, especialmente quando considera -se aaderência dos pacientes aos métodos atuais de manejo.
+  • Dessa forma, nota -se uma dificuldade na efetivação do plano terapêutico da HAS devido à elevada quantidade de pessoas que não são diagnosticadas, assim como aos baixos níveis de aderência da população ao tratamento e de monitoramento de sua condição crônica.
+
+> CONTRIBUIÇÃO:
+  • Apartir desse resultado, os artigos mostraram uma melhora considerável nos comportamentos de autogestão em saúde euma maior adesão ao monitoramento diário da PA.
+  • Con base en este resultado, los artículos mostraron una mejora específica en las conductas de autogestión de la salud yuna mayor adherencia al monitoreo diario de la PA.
+
+--- 5. Resumo Automático ---
+Dessa forma, após estudar o spontos assertivos e as limitações, será possível ratificar ou não opapel inovador das TIC no que se refere à educação em saúde.
+Os pacientes que se lembraram dos detalhes das mensagens recebidas pela plataforma WeChat, para lembrá-los de monitorar sua pressão arterial, mostraram uma atitude positiva em relação aos lembretes.
+Outro ponto relevante aser analisado é aavaliação do usuário em relação aexperiência no uso de um produto tecnológico, oque serve como material essencial para oaperfeiçoamento da tecnologia.
+
+------------------------------------------------------------
+
+ARQUIVO: 4093-Versão Final-26475-1-10-20250306.pdf
+============================================================
+
+--- 1. Palavras-Chave (Do Autor) ---
+Formação Continuada, Metodologias Ativas, Aprendizagem Criativa
+
+--- 2. Top 10 Termos ---
+1. professores: 57
+2. educacao: 55
+3. atividades: 48
+4. projetos: 48
+5. educadores: 47
+6. formacao: 46
+7. criativa: 42
+8. aprendizagem: 41
+9. metodologias: 37
+10. praticas: 35
+
+--- 3. Referências ---
+- Referências Aksela, M., & Haatainen, O. (2019). Project-based learning (PBL) in practise: Active teachers’ views of its’ advantages and challenges. Integrated Education for the Real World , 9–16. [GS ...
+
+--- 4. Análise Semântica ---
+
+> OBJETIVO:
+  • Este trabalho aborda atransformação nas metodologias de ensino, impulsionada por práticas educativas inovadoras, com foco em metodologias ativas esua adaptação aos objetivos de aprendizagem e ao currículo.
+  • Este estudio se enfoca en la transformación de las metodologías de enseñanza, impulsada por prácticas educativas innovadoras ymetodologías activas, adaptándose alos objetivos de aprendizaje y al currículo.
+
+> PROBLEMA:
+  • Potencialidades eDesafios na Formação Continuada de Educadores em Metodologias Ativas Title: Potentialities and Challenges in the Continuous Training of Educators in Active Methodologies Título:
+  • As mudanças no acesso à informação e ao conhecimento levantam anecessidade de avaliar acapacitação dos educadores para oenfrentamento aos desafios dessa transformação.
+
+> CONTRIBUIÇÃO:
+  • Os resultados revelaram asatisfação dos educadores, enfatizando oimpacto transformador de integrar atividades criativas associadas à tecnologia nas escolas.
+  • Los resultados indican la satisfacción de los educadores, destacando el impacto de integrar actividades creativas ytecnología en las escuelas.
+
+--- 5. Resumo Automático ---
+Porém, um esforço contínuo é dedicado acontornar tais barreiras por meio de políticas, como as citadas anteriormente, que datam dos anos 80, promovendo oaperfeiçoamento em conceitos epráticas pedagógicas apoiadas 58 Maraschin et al.
+Além disso, foi necessário coordenar aaquisição, organização e adistribuição dos materiais de suporte (Subseção 3.4), garantindo que todos os participantes tivessem acesso aos recursos necessários para oaproveitamento integral do curso.
+Por conseguinte, os dois fatores menos destacados pelos participantes como obstáculos ao avanço nas práticas pedagógicas no contexto da formação, foram agestão escolar e adificuldade de começar, mesmo tendo interesse.
+
+------------------------------------------------------------
+
+ARQUIVO: 4585-Versão Final-28269-1-10-20250502.pdf
+============================================================
+
+--- 1. Palavras-Chave (Do Autor) ---
+Contextos; Computação afetiva; Estados afetivos; Ontologia
+
+--- 2. Top 10 Termos ---
+1. afetivos: 73
+2. contexto: 71
+3. estados: 67
+4. ontologia: 48
+5. educacional: 43
+6. afetivo: 40
+7. informacoes: 38
+8. aprendizagem: 38
+9. search: 38
+10. contextos: 27
+
+--- 3. Referências ---
+- Referências Abaalkhail, R., Guthier, B., Alharthi, R., & El Saddik, A. (2018). Survey on ontologies for affective states and their influences Semantic web, 9(4), 441 -458. https://doi.org/10.3233/SW-1...
+
+--- 4. Análise Semântica ---
+
+> OBJETIVO:
+  • Apartir de consultas SPARQL foi possível obter resultados que respondem as questões propostas de identificação do estado afetivo do aluno em eventos específicos, assim como arelação das variáveis de contexto educacional, demonstrando acontribuição da ontologia proposta.
+  • Embora expressar ereconhecer estados afetivos e arelação entre oque os influenciam , seja uma característica humana, pesquisas têm avançado de forma significativa na área da computação , com oobjetivo de permitir que sistemas computacionais detectem, usem eexpressem emoções eoutros estados afetivos.
+
+> PROBLEMA:
+  • No entanto, existem ainda desafios relevantes na construção de sistemas capazes de representar os estados afetivos einterpretar sutilezas ealterações do com portamento humano.
+  • Moore (2017) sugere uma reflexão sobre as dificuldades de modelagem emensuração dos estados afetivos eaponta como um dos caminhos aintegração entre acomputação afetiva esistemas sensíveis ao contexto.
+
+> CONTRIBUIÇÃO:
+  • Apartir de consultas SPARQL foi possível obter resultados que respondem as questões propostas de identificação do estado afetivo do aluno em eventos específicos, assim como arelação das variáveis de contexto educacional, demonstrando acontribuição da ontologia proposta.
+  • Apartir de las consultas SPARQL, fue posible obtener resultados que responden alas preguntas propuestas de identificación del estado afectivo del estudiante en eventos específicos, así como la relación de las variables del contexto educativo, demostrando el aporte de la ontología propuesta.
+
+--- 5. Resumo Automático ---
+Scherer (2005) entende que as emoções devem ser avaliadas apartir de mudanças erelações entre quatro componentes, avaliações cognitivas, reações fisiológicas, expressão motora etendências comportamentais.
+Dessa forma, considerando o Evento1, pode-se identificar oespaço onde ocorreu oevento (Sala B1), os recursos utilizados (projetor), as estratégias utilizadas pelo professor (Apresentação) e adisciplina ou objetivos da situação de aprendizagem (Sociologia).
+Isso pode restringir aprecisão da inferência, pois não foram utilizados outros parâmetros, como sinais fisiológicos ou visuais; • Escopo da Amostra: avalidação foi realizada com uma amostra pequena, oque pode limitar egeneralizar os estados afetivos; • Complexidade de implementação: aontologia ainda não oferece uma implementação prática para uso em ambientes educacionais; • Interpretação dos dados: ainterpretação ecorrelação dos dados contextuais eafetivos podem ser complexas enecessitariam um aanálise mais profunda para obtenção de conclusões mais significativas.
+
+------------------------------------------------------------
+
+ARQUIVO: 4610-Versão Final-28223-1-10-20250501.pdf
+============================================================
+
+--- 1. Palavras-Chave (Do Autor) ---
+TPCK; Ensino de Ciências eMatemática; Desenvolvimento Profissional Docente
+
+--- 2. Top 10 Termos ---
+1. professores: 94
+2. conhecimento: 93
+3. ciencias: 76
+4. perfil: 62
+5. modelo: 57
+6. tpck: 48
+7. sobre: 46
+8. ensino: 45
+9. tpsmk: 45
+10. ematematica: 43
+
+--- 3. Referências ---
+- Referências Araújo, F. F. N. D. (2010). Os Games e as Funções Matemáticas: Uma aplicabilidade do Tribal Wars no cotidiano escolar do Ensino Médio . [Dissertação de Mestrado Profissional em Ensino de C...
+
+--- 4. Análise Semântica ---
+
+> OBJETIVO:
+  • Este estudo teve oobjetivo de compreender everificar operfil de conhecimento Tecnológico, Pedagógico e de Conteúdo (científico e/ou matemático) dos professores sobre ouso de TIC no ensino eaprendizagem de Ciências eMatemática.
+  • Este estudio tuvo como objetivo comprender yverificar el perfil de conocimientos Tecnológicos, Pedagógicos y de Contenidos (científicos y/omatemáticos) de los docentes sobre el uso de las TI en la enseñanza y el aprendizaje de Ciencias yMatemáticas.
+
+> PROBLEMA:
+  • Shulman (1986) acredita que, caso oprofessor apresente deficiência em alguma dessas duas áreas (Figura 2), suas aulas e as informações nelas disponibilizadas podem ser construídas pelos estudantes de maneira deficiente, acarretando, assim, dificuldades de aprendizagem.
+  • Outro exemplo é otrabalho de Nakashima ePicorez (2016) , que buscaram compreender as contribuições edesafios do modelo TPCK, como modelo explicativo da ação docente, nas decisões acerca da integração de tecnologias digitais em práticas pedagógicas.
+
+> CONTRIBUIÇÃO:
+  • Como resultados do estudo, constatou-se que amaioria dos professores faz em uso constante de TIç como WhatsApp eYou Tube, para propósitos educacionais.
+  • Como resultado del estudio se encontró que la mayoría de los docentes utilizan constantemente las TIç como WhatsApp yYouTube, con fines educativos.
+
+--- 5. Resumo Automático ---
+2 Avanços do Modelo PCK para ouso das Tecnologias Digitais eDesenvolvimento Profissional Uma questão que orienta onosso estudo eque vem sendo pesquisada desde Shulman (1986) até Mishra eKoehler (2006) é: como atecnologia digital foi etem sido incorporada eusada pelos professores?
+3) Technological Pedagogical Knowledge (TPK) - Conhecimento Pedagógico Tecnológico: Nesse agrupamento, é possível que um professor tenha uma percepção geral sobre qual tecnologia digital pode ser mais útil ecomo utilizá-la em sala de aula, independentemente do conteúdo lecionado.
+Apartir do modelo TPCK ( Mishra & Koehler, 2006) e TP ASK ( Jimoyiannis, 2010), propomos omodelo TPSMK para averiguar os perfis das relações pedagógicas, conteudistas etecnológicas dos professores de Ciências eMatemática participantes da pesquisa.
+
+------------------------------------------------------------
+
+ARQUIVO: 4877-Versão Final-30048-1-10-20250709.pdf
+============================================================
+
+--- 1. Palavras-Chave (Do Autor) ---
+Pensamento Computacional; Mecânicas de Jogos; Jogos Sérios;
+
+--- 2. Top 10 Termos ---
+1. jogos: 102
+2. mecanicas: 73
+3. jogo: 57
+4. search: 52
+5. game: 42
+6. caruso: 37
+7. amecanica: 35
+8. computacional: 31
+9. rbie: 30
+10. mecanica: 30
+
+--- 3. Referências ---
+- Referências Anderson, H. (2015). Game mechanics 101 (behavioral momentum). Henry Anderson. Recuperado outubro 19, 2022, de https://henryganderson.wordpress.com/2015/10/29/gamemechanics-101-behavioral-...
+
+--- 4. Análise Semântica ---
+
+> OBJETIVO:
+  • Zabot et al., 2020 conduziram um mapeamento sistemático com oobjetivo de identificar elementos que 695 Caruso et al.
+  • Mais próximo da metodologia proposta neste artigo, Martoglia ePontiroli, 2021 exploram aaplicação de técnicas de análise de dados eaprendizado de máquina (explicável) para compreender melhor os jogos edescobrir novas características que possam ser úteis em diferentes domínios socialmente relevantes.
+
+> PROBLEMA:
+  • Nesse contexto, aeducação deve incluir odesenvolvimento do Pensamento Computacional (PC) para formar cidadãos capazes de resolver problemas que possam ser processados por computadores.
+  • En este contexto, la educación debe incluir el desarrollo del Pensamiento Computacional (PC) para formar ciudadanos capaces de resolver problemas que puedan ser procesados por computadoras.
+
+> CONTRIBUIÇÃO:
+  • Como resultado, os estudantes ejovens profissionais atuais demonstram maior agilidade, dinamismo efacilidade para lidar com ferramentas 694 Caruso et al.
+  • Aviabilidade da abordagem é demonstrada por meio da coleta de um grande conjunto de dados sobre jogos de tabuleiro e da criação de um pipeline de processamento de informações para descobrir automaticamente categorias de jogos emecânicas, com resultados iniciais promissores.
+
+--- 5. Resumo Automático ---
+Abstraction Algorithm Automation Data Decomposition Evaluation LPC Action Points Appointment Behavioral Momentum Capture-Eliminate Cascading Information, Cut Scene, Story Collecting Communal Discovery Competition Cooperation-Collaboration Design-editing Game Turns Infinite Gameplay Maneuvering (Physical Movement) Meta-Game Mechanic Ownership (GM) Pareto Optimal Pavlovian Interaction Protégé Effect Questions and Answers Quick Feedback Resource Management Rewards Role Playing Status Tile Based Movement Tile-Laying Tokens to Act as Cards or Random Elements Urgent Optimism Virality mecânicas 0.6 0.6 0.56 0.64 0.65 0.62 0.63 0.59 0.58 0.59 0.57 0.51 0.56 0.56 0.52 0.58 0.54 0.6 0.57 0.61 0.59 0.56 0.61 0.54 0.64 0.55 0.61 0.54 0.53 Heatmap LM-GM x PC (BERT model: gtr-t5-xl) 0.52 0.54 0.56 0.58 0.60 0.62 0.64 Figura 8: Mapa de calor: mecânicas versus LPC.
+RBIE v.33 – 2025 Automation Algorithm Decomposition Data Abstraction Evaluation LPC Infinite Gameplay Ownership (GM) Virality Status Pavlovian Interaction Urgent Optimism Tile-Laying Meta-Game Mechanic Maneuvering (Physical Movement) Behavioral Momentum Rewards Questions and Answers Game Turns Cooperation-Collaboration Pareto Optimal Competition Design-editing Resource Management Protégé Effect Action Points Appointment Tokens to Act as Cards or Random Elements Quick Feedback Role Playing Collecting Communal Discovery Tile Based Movement Capture-Eliminate Cascading Information, Cut Scene, Story mecânicas LM-GM x PC score 0.525 0.550 0.575 0.600 0.625 Figura 9: GM × LPC.
+Isso provavelmente ocorreu porque a TM é uma mecânica obrigatória na ferramenta RPG Maker, epode ter sido aplicada de forma automática, sem um propósito consciente por parte dos participantes do experimento.
+
+------------------------------------------------------------
+
+ARQUIVO: 4970-Versão Final-28094-1-10-20250425.pdf
+============================================================
+
+--- 1. Palavras-Chave (Do Autor) ---
+Educação em Computação; Formação Continuada de Professores; Pensamento Computacional; Educação Infantil;
+
+--- 2. Top 10 Termos ---
+1. professores: 124
+2. educacao: 73
+3. infantil: 55
+4. sobre: 48
+5. computacao: 46
+6. search: 37
+7. computacional: 31
+8. education: 29
+9. problemas: 29
+10. computational: 28
+
+--- 3. Referências ---
+- Referências Alqahtani, M. M., Hall, J. A., Leventhal, M., & Argila, A. N. (2021). Programming in Mathematics Classrooms: Changes in Pre-service Teachers’ Intentions to Integrate Robots in Teaching. Di...
+
+--- 4. Análise Semântica ---
+
+> OBJETIVO:
+  • Dentro do contexto acima descrito, este trabalho, de caráter exploratório, tem como objetivo investigar as percepções dos professores da educação infantil em relação ao ensino para odesenvolvimento do PC nesse contexto educacional.
+  • Este estudo é de natureza exploratória, com oobjetivo de examinar as percepções dos professores da educação infantil sobre oensino para odesenvolvimento do PC.
+
+> PROBLEMA:
+  • Resumo OPensamento Computacional é aaplicação de princípios da Computação para resolver problemas de forma lógica ecriativa.
+  • Resumen El Pensamiento Computacional es la aplicación de principios de la computación para resolver problemas de manera lógica ycreativa.
+
+> CONTRIBUIÇÃO:
+  • Este artigo apresenta os resultados de um survey realizado na rede municipal de ensino de uma cidade do estado do Paraná, sobre apercepção de professores arespeito do ensino da computação na educação infantil.
+  • Os resultados indicam que os professores de educação infantil percebem oPensamento Computacional como uma competência essencial para odesenvolvimento dos alunos epara aparticipação ativa em uma sociedade digitalizada, porém os professores se sentem despreparados eexpressam interesse em formações específicas.
+
+--- 5. Resumo Automático ---
+Limitações eAmeaças à Validade Aprincipal limitação deste estudo é arepresentatividade dos resultados, pois todos os professores participantes são da rede municipal, restringindo ageneralização para outras redes ou contextos educacionais.
+Esse dado é relevante, pois indica um comprometimento dos professores com aformação continuada, oque pode facilitar aimplementação de novos conceitos, como o Pç nas práticas pedagógicas.
+Aintegração eficaz do PC não apenas aprimora as práticas pedagógicas na educação infantil, mas também desenvolve habilidades essenciais nos alunos, preparando-os para os desafios de um mundo cada vez mais digital (Yadav et al., 2022; Zhu & Wang, 2023).
+
+------------------------------------------------------------
+
+ARQUIVO: 5019-Versão Final-32495-1-10-20251008.pdf
+============================================================
+
+--- 1. Palavras-Chave (Do Autor) ---
+Projeto Participativo; Engenharia de Requisitos; Tecnologias Educacionais
+
+--- 2. Top 10 Termos ---
+1. processo: 72
+2. estudantes: 57
+3. participativo: 47
+4. tecnologias: 46
+5. requisitos: 41
+6. educacionais: 38
+7. design: 38
+8. workshops: 35
+9. software: 30
+10. oprocesso: 27
+
+--- 3. Referências ---
+- Referências Alves, M., Medeiros, F. P. A., & Melo, L. B. (2020). Levantamento do Estado da Arte sobre Aprendizagem baseada em Problemas na Educação aDistância eHíbrida. In Anais do XXXI Simpósio Brasi...
+
+--- 4. Análise Semântica ---
+
+> OBJETIVO:
+  • um mapeamento sistemático com oobjetivo de identificar as técnicas de engenharia de requisitos mais adequadas para tornar os estudantes eprofessores participantes ativos no processo de construção de softwares educacionais.
+  • Apartir dessa questão central, definiu-se como objetivo empírico aproposição, aplicaç ão evalidação de um processo que combine metodologias participativas epedagógicas, de modo agarantir alinhamento entre soluções tecnológicas enecessidades reais do Araújo, R. P., Medeiros, F. P. ARBIE v.33 – 2025 1431 ensino-aprendizagem.
+
+> PROBLEMA:
+  • Este trabalho investiga edesenvolve um processo participativo de engenharia de requisitos para aconstrução de tecnologias educacionais, fundamentado nos referenciais teórico -metodológicos do Design Participativo, Design Thinking eAprendizagem Baseada e mProblemas.
+  • Opercurso metodológico incluiu um mapeamento sistemático da literatura para identificar lacunas etécnicas aplicáveis, seguido da elaboração erefinamento do processo por meio de três workshops presenciais com professores eestudantes em con textos reais de aprendizagem.
+
+> CONTRIBUIÇÃO:
+  • Os resultados indic am alto nível de concordância quanto à clareza, aplicabilidade efacilidade de uso, variando de 76% a 97% de respostas
+  • Los resultados indican un alto nivel de acuerdo respecto a la claridad, aplicabilidad yfacilidad de uso, variando entre el 76% y el 97% de respuestas de “totalmente de acuerdo” y el 100% de “de acuerdo” o “totalmente de acuerdo” en los criterios evaluados.
+
+--- 5. Resumo Automático ---
+Os workshops tiveram como objetivos: (i) validar oprocesso participativo em diferentes contextos eáreas de conhecimento; (ii) avaliar aclareza eaplicabilidade das etapas propostas; e (iii) gerar protótipos funcionais para problemas reais, permitindo aavaliação pelos próprios participantes.
+Amotivação do professor em relação ao uso de novas tecnologias também é um fator determinante para osucesso na adoção dessas ferramentas, uma vez que, se oprofessor não estiver engajado, dificilmente conseguirá motivar seus alunos autilizá-las.
+Essa abordagem oferece, assim, uma perspectiva promissora para acriação de novas tecnologias educacionais que, ao serem desenvolvidas em colaboração com os principais atores envolvidos, podem impactar positivamente odesempenho dos alunos e aqualidade do processo educacional como um todo.
+
+------------------------------------------------------------
+
+ARQUIVO: 5093-Versão Final-31067-1-10-20250819.pdf
+============================================================
+
+--- 1. Palavras-Chave (Do Autor) ---
+Autoformação; Literacia Estatística; Educação Estatística; Linguagem Python; Regressão Linear; Regressão Polinomial
+
+--- 2. Top 10 Termos ---
+1. estatistica: 60
+2. matematica: 46
+3. sobre: 40
+4. educacao: 36
+5. dados: 36
+6. ferrete: 34
+7. silva: 32
+8. regressao: 32
+9. rbie: 30
+10. l.p: 30
+
+--- 3. Referências ---
+- Referências Almeida, R. N. d. (2015). Ométodo dos mínimos quadrados: estudo eaplicações para oensino médio [Dissertação (Mestrado Acadêmico em Matemática)]. Universidade Federal Fluminense. https://ue...
+
+--- 4. Análise Semântica ---
+
+> OBJETIVO:
+  • Opresente trabalho apresenta uma proposta de projeto de Modelagem Matemática, integrando as Tecnologias Móveis Digitais de Informação eComunicação (TMDIC), mais precisamente no uso da linguagem de programação Python para construção de modelos de Regressão Linear ePolinomial.
+  • Por fim, aproposta de projeto, divida em três partes, onde serão discutidos oproblema inicial, conceitos matemáticos essenciais eimplementação de códigos para omodelo e aculminância do projeto.
+
+> PROBLEMA:
+  • Por fim, aproposta de projeto, divida em três partes, onde serão discutidos oproblema inicial, conceitos matemáticos essenciais eimplementação de códigos para omodelo e aculminância do projeto.
+  • Finalmente, la propuesta del proyecto, dividida en tres partes, discute el problema inicial, los conceptos matemáticos esenciales, la implementación de códigos para el modelo y la culminación del proyecto.
+
+> CONTRIBUIÇÃO:
+  • No trabalho com ainferência, por exemplo, é mais importante acompreensão dos processos de amostragem e da coleta de dados do que aobtenção do resultado final, conseguida através das fórmulas apropriadas edisponíveis em livros-textos ou apresentadas pelo professor. 2.
+  • Smith (1998) afirma que os trabalhos com projetos nos quais os alunos coletam dados, organizam esses dados, apresentam einterpretam resultados, produzem relatórios, gráficos, pareceres, etc. têm se mostrado extremamente frutífero para que as metas listadas acima sejam, ao menos parcialmente alcançadas.
+
+--- 5. Resumo Automático ---
+Diante dessas assertivas, surge aseguinte questão: qual abordagem pode potencializar aresolução desses desafios dentro da formação docente, no que diz respeito à Educação Estatística e as Tecnologias Móveis Digitais de Informação eComunicação (TMDIC)?
+Um exemplo disso é ainformação sobre ataxa da população brasileira e os tratamentos oferecidos pelo Sistema Único de Saúde (SUS), em quais classes econômicas essas pessoas se encontram, etc.
+Lembrando também que esses códigos estão prontos, portanto, se os discentes envolvidos não tiverem prática nessa linguagem, poderão ser apresentados sem discussão das linhas, servindo como base de aprendizagem para oPython.
+
+------------------------------------------------------------
+
+ARQUIVO: 5099-Versão Final-31434-1-10-20250829.pdf
+============================================================
+
+--- 1. Palavras-Chave (Do Autor) ---
+letramento computacional; enfermagem; formação profissional; proeja; educação de jovens eadultos
+
+--- 2. Top 10 Termos ---
+1. computacional: 140
+2. literacy: 99
+3. educacao: 92
+4. letramento: 87
+5. profissional: 84
+6. formacao: 78
+7. enfermagem: 68
+8. computational: 66
+9. sobre: 59
+10. cursos: 53
+
+--- 3. Referências ---
+- Referências Agbo, F. J., Oyelere, S. S., Suhonen, J., & Tukiainen, M. (2022). Design, development, and evaluation of avirtual reality game-based application to support computational thinking. Educatio...
+
+--- 4. Análise Semântica ---
+
+> OBJETIVO:
+  • ORCID: 0000-0002-1834-2805 juliana.silva@ifb.edu.br Resumo Oobjetivo deste artigo é realizar uma revisão sistemática da literatura sobre oletramento computacional na Educação de Jovens eAdultos, com foco em cursos de formação profissional em Enfermagem.
+  • El objetivo de este artículo es realizar una revisión sistemática de la literatura sobre alfabetización informática en Educación de Jóvenes yAdultos, con especial atención alos cursos de formación profesional en Enfermería.
+
+> PROBLEMA:
+  • Dessa forma, refletir sobre aformação em cursos de formação profissional em enfermagem, no contexto da educação de jovens eadultos, em relação ao uso de tecnologias, é um desafio contínuo.
+  • Isso envolve opensamento computacional, que inclui habilidades como decomposição de problemas, reconhecimento de padrões, abstração ecriação de algoritmos.
+
+> CONTRIBUIÇÃO:
+  • As diretrizes que guiaram arevisão foram: (i) busca livre; (ii) definição de perguntas norteadoras; (iii) definição das strings de busca; (iv) definição das estratégias de busca; (v) aplicação dos critérios de inclusão eexclusão; (vi) extração de dados primários; (vii) análise dos dados; (viii) discussão einterpretação dos resultados e (ix) redação do texto.
+  • Com base nessas análises, destacam-se alguns resultados.
+
+--- 5. Resumo Automático ---
+Essa discussão realizada por Valente (2019) é desenvolvida com base em referenciais teóricos como Papert (1980), DiSessa (2000; 2018) eoutros autores que discutem os letramentos emergentes das tecnologias digitais da informação ecomunicação, internet eoutras.
+Sua teoria sugere que sejam abordados os pilares material, mental ou cognitivo esocial, levando em consideração oconhecimento intuitivo, bem como aestrutura das atividades eengajamento no desenvolvimento do letramento.
+Além disso, ela sugere considerar as relações entre recursos tecnológicos einteligência, aprendizado ecultura, na busca por ampliar oentendimento sobre como esses elementos se interconectam einfluenciam nossas experiências educacionais esociais.
+
+------------------------------------------------------------
+
+ARQUIVO: 5840-Versão Final-31036-1-10-20250818.pdf
+============================================================
+
+--- 1. Palavras-Chave (Do Autor) ---
+Análise de Aprendizagem; Justiça; Responsabilidade ; Transparência; Ética; Educação; Personalização
+
+--- 2. Top 10 Termos ---
+1. learning: 95
+2. dados: 92
+3. analytics: 77
+4. estudos: 65
+5. search: 58
+6. educacionais: 51
+7. ferramentas: 49
+8. principios: 42
+9. fate: 42
+10. estudantes: 40
+
+--- 3. Referências ---
+- Referências Andersen, I. G. (2020). What went wrong? Examining teachers’ data use and instructional decision making through abottom-up data intervention in Denmark. International Journal of Educationa...
+
+--- 4. Análise Semântica ---
+
+> OBJETIVO:
+  • Diante dessa circunstância, oobjetivo deste artigo é investigar, por meio de um mapeamento sistemático da literatura, de que forma os estudos na área de Learning Analytics incorporam os princípios de Justiça, Responsabilidade, Transparência eÉtica, identificando lacunas, boas práticas edesafios emergentes que podem subsidiar odesenvolvimento de ferramentas epolíticas educacionais mais equitativas.
+  • (2023) introduzem uma abordagem voltada à transparência percebida, propondo métricas para avaliar como os usuários compreendem os sistemas analíticos, oque se alinha diretamente ao objetivo deste estudo.
+
+> PROBLEMA:
+  • Oestudo identificou as ferramentas util izadas, os principais desafios éticos etécnicos, além dos stakeholders mais impactados.
+  • Essas tecnologias possibilitam compreender ocomportamento dos estudantes, prever dificuldades eapoiar atomada de decisões pedagógicas.
+
+> CONTRIBUIÇÃO:
+  • Os resultados destacam aimportância de personalizar oensino, proteger aprivacidade dos dados egarantir atransparência nos sistemas de LA.
+  • Los resultados destacan la importancia de personalizar el aprendizaje, proteger la privacidad de los datos ygarantizar la transparencia en los sistemas de AL.
+
+--- 5. Resumo Automático ---
+Esses critérios permitiram selecionar apenas estudos diretamente alinhados ao escopo da pesquisa, assegurando que as evidências analisadas estivessem focadas na apl icação dos princípios de FATE no contexto educacional.
+As buscas pelos estudos mais relevantes ocorreram em cinco bases de dados amplamente reconhecidas no meio acadêmico: Compendex (Engineering Village), IEEE Digital Library, ISI Web of Science, ScienceDirect eScopus.
+Esses indicadores operam como instrumentos fundamentais para aoperacionalização dos princípios de Fairness, Accountability, Transparency eEthics , assegurando que os sistemas baseados em dados não reproduzam desigualdades ou práticas excludentes.
+
+------------------------------------------------------------
+
