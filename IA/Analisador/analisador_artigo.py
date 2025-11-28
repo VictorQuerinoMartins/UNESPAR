@@ -14,9 +14,9 @@ import unicodedata
 
 def config_ambiente():
     try:
-        nltk.data.find('corpora/stopwords') # Verifica se as stopwords estão instaladas
+        nltk.data.find('corpora/stopwords') 
     except LookupError:
-        nltk.download('stopwords') # Baixa se der erro
+        nltk.download('stopwords')
     
     try:
         nltk.data.find('tokenizers/punkt')
@@ -26,62 +26,62 @@ def config_ambiente():
         nltk.download('punkt_tab')
         
     try:
-        spacy.load("pt_core_news_sm") # Tenta carregar o modelo do Spacy
+        spacy.load("pt_core_news_sm") 
     except OSError:
         print("Baixando modelo Spacy...")
-        os.system(f'"{sys.executable}" -m spacy download pt_core_news_sm') # Baixa automaticamente se não encontrar
+        os.system(f'"{sys.executable}" -m spacy download pt_core_news_sm')
 
 config_ambiente()
 nlp = spacy.load("pt_core_news_sm")
 
 def reparar_texto_bugado(texto_entrada):
-    texto_temp = texto_entrada # Função vital para PDFs antigos que separam acentos
+    texto_temp = texto_entrada 
     
-    texto_temp = texto_temp.replace('-\n', '') # Remove hifens de quebra de linha
-    texto_temp = texto_temp.replace('\n', ' ') # Junta linhas
-    texto_temp = texto_temp.replace('\n\n', '{{PARAGRAFO}}') 
+    texto_temp = texto_temp.replace('-\n', '')
+    texto_temp = texto_temp.replace('\n', ' ') 
+    texto_temp = texto_temp.replace('\n\n', '{{PARAGRAFO}}')  # tirando quebras de 2 linhas
     
-    # acentos separados (ex: ' ~ a' vira 'ã')
-    texto_temp = re.sub(r',\s*~\s*ao', 'ão', texto_temp, flags=re.IGNORECASE) # Caso especifico c, ~ a
+    # ( ' ~ a' vira 'ã')
+    texto_temp = re.sub(r',\s*~\s*ao', 'ão', texto_temp, flags=re.IGNORECASE) 
     texto_temp = re.sub(r',\s*~\s*a', 'ã', texto_temp, flags=re.IGNORECASE)
-    texto_temp = re.sub(r'c\s*,', 'ç', texto_temp, flags=re.IGNORECASE) # Cedilha
+    texto_temp = re.sub(r'c\s*,', 'ç', texto_temp, flags=re.IGNORECASE)
     
-    # Acento Agudo ( ' a -> á )
+    # ( ' a -> á )
     texto_temp = re.sub(r"'\s*a", "á", texto_temp, flags=re.IGNORECASE)
     texto_temp = re.sub(r"'\s*e", "é", texto_temp, flags=re.IGNORECASE)
     texto_temp = re.sub(r"'\s*i", "í", texto_temp, flags=re.IGNORECASE)
     texto_temp = re.sub(r"'\s*o", "ó", texto_temp, flags=re.IGNORECASE)
     texto_temp = re.sub(r"'\s*u", "ú", texto_temp, flags=re.IGNORECASE)
     
-    # Acento Circunflexo e Til
+    # ( '^ a -> â )
     texto_temp = re.sub(r"\^\s*a", "â", texto_temp, flags=re.IGNORECASE)
     texto_temp = re.sub(r"\^\s*e", "ê", texto_temp, flags=re.IGNORECASE)
     texto_temp = re.sub(r"\^\s*o", "ô", texto_temp, flags=re.IGNORECASE)
     texto_temp = re.sub(r"~\s*a", "ã", texto_temp, flags=re.IGNORECASE)
     texto_temp = re.sub(r"~\s*o", "õ", texto_temp, flags=re.IGNORECASE)
     
-    # Cola palavras quebradas (ex: 'c' + 'odigo')
+    # Cola palavras quebradas
     texto_temp = re.sub(r'\b([a-zA-ZçÇ])\s+([a-zA-ZçÇáàâãéèêíïóôõöúçñÁÀÂÃÉÈÊÍÏÓÔÕÖÚÇÑ]{3,})\b', r'\1\2', texto_temp)
 
     texto_temp = texto_temp.replace('{{PARAGRAFO}}', '\n\n')
-    texto_saida = re.sub(r'\s+', ' ', texto_temp).strip() # Remove espaços duplos
+    texto_saida = re.sub(r'\s+', ' ', texto_temp).strip() #tira espaços extras
     
     return texto_saida
 
 def ler_pdf(caminho):
     texto_completo = ""
     try:
-        leitor = pypdf.PdfReader(caminho) # Lê o PDF
+        leitor = pypdf.PdfReader(caminho) 
         for pagina in leitor.pages:
             t = pagina.extract_text()
             if t:
-                texto_completo += t + "\n" # Junta o texto de todas as páginas
+                texto_completo += t + "\n" # juntando na sting final
         return texto_completo
     except Exception as e:
         return None
 
 def filtrar_palavras(texto):
-    stops = stopwords.words('portuguese') + stopwords.words('english') + list(punctuation) # Carrega stopwords
+    stops = stopwords.words('portuguese') + stopwords.words('english') + list(punctuation) 
     extras = ['et', 'al', 'figura', 'tabela', 'http', 'doi', 'vol', 'pp', 'após', 'pode', 'ser', 'para', 'com', 'que', 'nas', 'nos', 'uma', 'uns', 'são', 'não', 'como']
     stops += extras # Adiciona termos extras de artigos
     
@@ -89,11 +89,11 @@ def filtrar_palavras(texto):
     limpas = []
     
     for p in palavras:
-        p_limpa = p.strip(punctuation + "0123456789")
-        nfkd = unicodedata.normalize('NFKD', p_limpa) # Remove acento para padronizar contagem
+        p_limpa = p.strip(punctuation + "0123456789") # Tirar pontuação e números colados na palavra
+        nfkd = unicodedata.normalize('NFKD', p_limpa)
         p_sem_acento = nfkd.encode('ASCII', 'ignore').decode('ASCII')
         
-        if len(p_sem_acento) > 2 and p_sem_acento not in stops: # Filtra palavras pequenas e irrelevantes
+        if len(p_sem_acento) > 2 and p_sem_acento not in stops: 
             limpas.append(p_sem_acento)
             
     return limpas
@@ -101,14 +101,13 @@ def filtrar_palavras(texto):
 def top10(palavras):
     dic = {}
     for p in palavras:
-        dic[p] = dic.get(p, 0) + 1 # Conta frequência manualmente
+        dic[p] = dic.get(p, 0) + 1
     
-    ordenado = sorted(dic.items(), key=lambda x: x[1], reverse=True) # Ordena do maior para o menor
+    ordenado = sorted(dic.items(), key=lambda x: x[1], reverse=True) # lambda olha o segundo argumento da tupla (contagem)
     return ordenado[:10]
 
 def extrair_keywords_autor(texto_completo):
     texto_limpo = reparar_texto_bugado(texto_completo)
-    # Procura pela linha específica "Palavras-chave:" ou "Keywords:"
     match = re.search(r'(Palavras-chave|Keywords)[:\s]+(.*?)(?:\.|Abstract|Resumo|$)', texto_limpo, re.IGNORECASE | re.DOTALL)
     
     if match:
@@ -117,18 +116,18 @@ def extrair_keywords_autor(texto_completo):
 
 def encontrar_refs(texto):
     texto_limpo = reparar_texto_bugado(texto)
-    inicio = texto_limpo.lower().rfind("referências") # Procura a seção no final
+    inicio = texto_limpo.lower().rfind("referências")
     
-    if inicio > len(texto_limpo) * 0.7: # Valida se está nos últimos 30% do arquivo
+    if inicio > len(texto_limpo) * 0.7: # está no final do texto ?
         bloco = texto_limpo[inicio:]
         linhas = bloco.split('\n')
-        return [l.strip() for l in linhas if len(l.strip()) > 20] # Filtra linhas curtas
+        return [l.strip() for l in linhas if len(l.strip()) > 20] # ignora linha muito curta
     
     return ["Seção de referências não encontrada."]
 
 def analisar_conteudo(texto):
     texto_limpo = reparar_texto_bugado(texto)
-    doc = nlp(texto_limpo[:200000]) # Usa IA (Spacy) e limita tamanho
+    doc = nlp(texto_limpo[:200000]) # processa o texto com Spacy
     
     res = {"Objetivo": [], "Problema": [], "Contribuição": []}
     
@@ -136,7 +135,7 @@ def analisar_conteudo(texto):
     keys_prob = ["problema", "desafio", "dificuldade", "lacuna"]
     keys_con = ["contribuição", "resultado", "conclusão"]
     
-    for sent in doc.sents: # Analisa frase por frase
+    for sent in doc.sents: 
         txt = sent.text.lower()
         
         for k in keys_obj:
@@ -160,8 +159,8 @@ def resumo(texto):
     try:
         texto_limpo = reparar_texto_bugado(texto)
         parser = PlaintextParser.from_string(texto_limpo, Tokenizer("portuguese"))
-        resumidor = LsaSummarizer()
-        summary = resumidor(parser.document, 3) # Gera resumo automático de 3 frases
+        resumidor = LsaSummarizer() # LSA algoritmo q faz o resumo
+        summary = resumidor(parser.document, 3) #3 frases
         return "\n".join([str(s) for s in summary])
     except:
         return "Erro ao gerar resumo."
@@ -175,7 +174,7 @@ def main():
         print(f"ERRO: Crie a pasta 'artigos' aqui: {pasta_artigos}")
         return
 
-    arquivos = glob.glob(os.path.join(pasta_artigos, "*.pdf")) 
+    arquivos = glob.glob(os.path.join(pasta_artigos, "*.pdf")) # Busca PDFs
     
     if not arquivos:
         print("Nenhum PDF encontrado.")
@@ -183,7 +182,7 @@ def main():
 
     print(f"Processando {len(arquivos)} artigos... Aguarde.")
 
-    with open(arquivo_saida, 'w', encoding='utf-8') as f: 
+    with open(arquivo_saida, 'w', encoding='utf-8') as f:
         f.write(f"RELATÓRIO FINAL - {len(arquivos)} ARTIGOS\n")
         f.write("="*60 + "\n\n")
 
@@ -197,13 +196,13 @@ def main():
                 f.write(f"ERRO DE LEITURA: {nome}\n\n")
                 continue
             
-            txt_final = reparar_texto_bugado(txt_bruto) 
+            txt_final = reparar_texto_bugado(txt_bruto)
             
             f.write(f"ARQUIVO: {nome}\n")
             f.write("="*60 + "\n")
             
             f.write("\n--- 1. Palavras-Chave (Do Autor) ---\n")
-            f.write(f"{extrair_keywords_autor(txt_bruto)}\n") 
+            f.write(f"{extrair_keywords_autor(txt_bruto)}\n")
 
             f.write("\n--- 2. Top 10 Termos ---\n")
             top = top10(filtrar_palavras(txt_final))
