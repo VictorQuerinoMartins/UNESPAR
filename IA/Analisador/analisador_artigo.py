@@ -34,7 +34,7 @@ def config_ambiente():
 config_ambiente()
 nlp = spacy.load("pt_core_news_sm")
 
-def reparar_texto_bugado(texto_entrada):
+def reparar_texto(texto_entrada):
     texto_temp = texto_entrada 
     
     texto_temp = texto_temp.replace('-\n', '')
@@ -82,14 +82,14 @@ def ler_pdf(caminho):
 
 def filtrar_palavras(texto):
     stops = stopwords.words('portuguese') + stopwords.words('english') + list(punctuation) 
-    extras = ['et', 'al', 'figura', 'tabela', 'http', 'doi', 'vol', 'pp', 'após', 'pode', 'ser', 'para', 'com', 'que', 'nas', 'nos', 'uma', 'uns', 'são', 'não', 'como']
-    stops += extras # Adiciona termos extras de artigos
+    extras = ['et', 'al', 'figura', 'tabela', 'http', 'doi', 'vol', 'pp', 'após', 'pode','ser', 'para', 'com', 'que', 'nas', 'nos', 'uma', 'uns', 'são', 'não', 'como']
+    stops += extras 
     
     palavras = texto.lower().split()
     limpas = []
     
     for p in palavras:
-        p_limpa = p.strip(punctuation + "0123456789") # Tirar pontuação e números colados na palavra
+        p_limpa = p.strip(punctuation + "0123456789") # tirar pontos e números colados na palavra
         nfkd = unicodedata.normalize('NFKD', p_limpa)
         p_sem_acento = nfkd.encode('ASCII', 'ignore').decode('ASCII')
         
@@ -107,7 +107,7 @@ def top10(palavras):
     return ordenado[:10]
 
 def extrair_keywords_autor(texto_completo):
-    texto_limpo = reparar_texto_bugado(texto_completo)
+    texto_limpo = reparar_texto(texto_completo)
     match = re.search(r'(Palavras-chave|Keywords)[:\s]+(.*?)(?:\.|Abstract|Resumo|$)', texto_limpo, re.IGNORECASE | re.DOTALL)
     
     if match:
@@ -115,10 +115,10 @@ def extrair_keywords_autor(texto_completo):
     return "Não identificadas explicitamente."
 
 def encontrar_refs(texto):
-    texto_limpo = reparar_texto_bugado(texto)
-    inicio = texto_limpo.lower().rfind("referências")
+    texto_limpo = reparar_texto(texto)
+    inicio = texto_limpo.lower().rfind("referências") # analisa no final
     
-    if inicio > len(texto_limpo) * 0.7: # está no final do texto ?
+    if inicio > len(texto_limpo) * 0.7: 
         bloco = texto_limpo[inicio:]
         linhas = bloco.split('\n')
         return [l.strip() for l in linhas if len(l.strip()) > 20] # ignora linha muito curta
@@ -126,7 +126,7 @@ def encontrar_refs(texto):
     return ["Seção de referências não encontrada."]
 
 def analisar_conteudo(texto):
-    texto_limpo = reparar_texto_bugado(texto)
+    texto_limpo = reparar_texto(texto)
     doc = nlp(texto_limpo[:200000]) # processa o texto com Spacy
     
     res = {"Objetivo": [], "Problema": [], "Contribuição": []}
@@ -157,7 +157,7 @@ def analisar_conteudo(texto):
 
 def resumo(texto):
     try:
-        texto_limpo = reparar_texto_bugado(texto)
+        texto_limpo = reparar_texto(texto)
         parser = PlaintextParser.from_string(texto_limpo, Tokenizer("portuguese"))
         resumidor = LsaSummarizer() # LSA algoritmo q faz o resumo
         summary = resumidor(parser.document, 3) #3 frases
@@ -196,7 +196,7 @@ def main():
                 f.write(f"ERRO DE LEITURA: {nome}\n\n")
                 continue
             
-            txt_final = reparar_texto_bugado(txt_bruto)
+            txt_final = reparar_texto(txt_bruto)
             
             f.write(f"ARQUIVO: {nome}\n")
             f.write("="*60 + "\n")
