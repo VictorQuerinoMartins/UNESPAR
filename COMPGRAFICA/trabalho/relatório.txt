@@ -1,0 +1,51 @@
+Relatório - Curva de Bézier Cúbica Interativa
+
+Este trabalho implementa, em OpenGL Moderno (Python, com as bibliotecas GLFW,
+PyOpenGL e NumPy), uma aplicação gráfica que desenha uma curva de Bézier
+cúbica definida por 4 pontos de controle e permite manipulá-la em tempo real
+pelo teclado.
+
+Funcionalidades implementadas:
+
+1. Renderização com pipeline programável
+   - Vertex e fragment shaders (GLSL 330 core) compilados e linkados em um
+     shader program único.
+   - Uso de uniform (color) para definir a cor de cada desenho (curva,
+     polígono de controle e pontos) sem precisar recompilar o shader.
+   - Dados de vértices armazenados em VAO/VBO, com o atributo de posição
+     (aPos) configurado via glVertexAttribPointer.
+
+2. Cálculo da curva de Bézier cúbica
+   - Implementação do algoritmo de De Casteljau (interpolações lineares
+     sucessivas) para calcular cada ponto da curva a partir dos 4 pontos de
+     controle, para um parâmetro t entre 0 e 1.
+   - Geração da curva como uma sequência de amostras (resolução ajustável),
+     desenhada com GL_LINE_STRIP.
+
+3. Interação via teclado
+   - Teclas R, G, B, W alternam a cor da curva (vermelho, verde, azul,
+     branco).
+   - Teclas 1-4 selecionam qual ponto de controle está ativo (destacado em
+     amarelo e maior que os demais).
+   - Setas direcionais movem o ponto de controle selecionado em tempo real,
+     recalculando a curva a cada alteração.
+   - Teclas +/- (incluindo teclado numérico) aumentam ou diminuem a
+     resolução da curva (100 a 2000 amostras).
+   - Tecla P mostra/oculta o polígono de controle (linhas entre os pontos)
+     e os próprios pontos de controle.
+   - Teclas [ e ] diminuem/aumentam a espessura da linha da curva (1 a 10).
+
+4. Atualização eficiente dos buffers
+   - Uso de uma flag de estado (dirty) para só recalcular e reenviar os
+     dados ao VBO quando pontos de controle ou resolução realmente mudam,
+     evitando trabalho desnecessário a cada frame.
+   - Buffers configurados com GL_DYNAMIC_DRAW, já que os dados mudam com
+     frequência durante a execução.
+
+5. Encerramento controlado
+   - Ao fechar a janela, os recursos alocados na GPU (VAOs, VBOs e o shader
+     program) são liberados corretamente antes de finalizar o GLFW.
+
+Conceitos de computação gráfica aplicados: shaders (vertex/fragment),
+uniforms, VAO/VBO, curvas de Bézier (De Casteljau) e loop de renderização
+interativo em tempo real.

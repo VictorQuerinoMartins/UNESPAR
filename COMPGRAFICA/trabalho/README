@@ -1,0 +1,33 @@
+# Curva de Bézier Cúbica Interativa
+
+Aplicação em OpenGL Moderno (Python) que desenha uma curva de Bézier cúbica com 4 pontos de controle, permitindo manipulá-la em tempo real pelo teclado.
+
+## Requisitos
+
+- Python 3.8+
+- Bibliotecas: `glfw`, `PyOpenGL`, `numpy`
+
+## Instalação
+
+```
+pip install glfw PyOpenGL numpy
+```
+
+## Execução
+
+```
+python main.py
+```
+
+## Controles
+
+Tecla(s)        | Ação                                                          
+-----------------|----------------------------------------------------------------
+`R` `G` `B` `W` | Muda a cor da curva (vermelho/verde/azul/branco)               
+`1` `2` `3` `4` | Seleciona o ponto de controle (destacado em amarelo, maior)   
+`↑` `↓` `←` `→` | Move o ponto de controle selecionado                            
+`+` / `-`       | Aumenta / diminui a resolução da curva (100 a 2000 amostras)    
+`P`             | Mostra / oculta o polígono de controle                          
+`]` / `[`       | Aumenta / diminui a espessura da curva                          
+
+Fechar a janela (botão de fechar ou Alt+F4) encerra a aplicação e libera os recursos do OpenGL (VAOs, VBOs e shaders).
