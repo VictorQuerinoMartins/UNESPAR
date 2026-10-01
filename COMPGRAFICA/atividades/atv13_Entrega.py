@@ -9,15 +9,22 @@ from OpenGL.GL import *
 WIDTH = 900
 HEIGHT = 700
 
-tx = 0.0
-ty = 0.0
-tz = 0.0
+robot_x = 0.0
+robot_y = 0.0
+robot_z = 0.0
 
-angle_x = 0.0
-angle_y = 0.0
-angle_z = 0.0
+robot_angle = 0.0
 
-scale_value = 1.0
+robot_scale = 1.0
+
+right_arm_angle = 0.0
+
+model_location = None
+view_location = None
+projection_location = None
+
+face_vao = None
+edge_vao = None
 
 YELLOW = (0.95, 0.78, 0.25)
 RED = (0.88, 0.30, 0.30)
@@ -475,38 +482,176 @@ def perspective_matrix(
     ], dtype=np.float32)
 
 
+#ADICIONAR FUNCAO DE DESENHO DE UM CUBO
+
+def draw_cube(model):
+    glUniformMatrix4fv(
+        model_location,
+        1,
+        GL_TRUE,
+        model
+    )
+
+    glEnable(GL_POLYGON_OFFSET_FILL)
+
+    glPolygonOffset(
+        1.0,
+        1.0
+    )
+
+    # Faces
+    glBindVertexArray(face_vao)
+
+    glDrawArrays(
+        GL_TRIANGLES,
+        0,
+        len(face_vertices) // 6
+    )
+
+    glBindVertexArray(0)
+
+    glDisable(GL_POLYGON_OFFSET_FILL)
+
+    # Arestas
+    glBindVertexArray(edge_vao)
+
+    glDrawArrays(
+        GL_LINES,
+        0,
+        len(edge_vertices) // 6
+    )
+
+    glBindVertexArray(0)
+
+
+#ADICIONAR FUNCAO DE DESENHO DO ROBO
+
+def draw_robot():
+    robot_transform = (
+        translation_matrix(
+            robot_x,
+            robot_y,
+            robot_z
+        )
+        @
+        rotation_y_matrix(
+            robot_angle
+        )
+        @
+        scale_matrix(
+            robot_scale,
+            robot_scale,
+            robot_scale
+        )
+    )
+
+    tronco = (
+        robot_transform
+        @
+        translation_matrix(0.0, 0.0, 0.0)
+        @
+        scale_matrix(0.35, 0.50, 0.20)
+    )
+
+    draw_cube(tronco)
+
+    cabeca = (
+        robot_transform
+        @
+        translation_matrix(0.0, 0.65, 0.0)
+        @
+        scale_matrix(0.22, 0.22, 0.22)
+    )
+
+    draw_cube(cabeca)
+
+    braco_esquerdo = (
+        robot_transform
+        @
+        translation_matrix(-0.50, 0.10, 0.0)
+        @
+        scale_matrix(0.12, 0.45, 0.12)
+    )
+
+    draw_cube(braco_esquerdo)
+
+    # Ombro direito: ponto em torno do qual o braço direito gira
+    right_shoulder_x = 0.50
+    right_shoulder_y = 0.325
+    right_shoulder_z = 0.0
+
+    braco_direito = (
+        robot_transform
+        @
+        translation_matrix(
+            right_shoulder_x,
+            right_shoulder_y,
+            right_shoulder_z
+        )
+        @
+        rotation_z_matrix(right_arm_angle)
+        @
+        translation_matrix(
+            0.0,
+            0.10 - right_shoulder_y,
+            0.0
+        )
+        @
+        scale_matrix(0.12, 0.45, 0.12)
+    )
+
+    draw_cube(braco_direito)
+
+    perna_esquerda = (
+        robot_transform
+        @
+        translation_matrix(-0.20, -0.75, 0.0)
+        @
+        scale_matrix(0.14, 0.45, 0.14)
+    )
+
+    draw_cube(perna_esquerda)
+
+    perna_direita = (
+        robot_transform
+        @
+        translation_matrix(0.20, -0.75, 0.0)
+        @
+        scale_matrix(0.14, 0.45, 0.14)
+    )
+
+    draw_cube(perna_direita)
+
+
 def reset_transformations():
-    global tx
-    global ty
-    global tz
+    global robot_x
+    global robot_y
+    global robot_z
 
-    global angle_x
-    global angle_y
-    global angle_z
+    global robot_angle
+    global robot_scale
 
-    global scale_value
+    global right_arm_angle
 
-    tx = 0.0
-    ty = 0.0
-    tz = 0.0
+    robot_x = 0.0
+    robot_y = 0.0
+    robot_z = 0.0
 
-    angle_x = 0.0
-    angle_y = 0.0
-    angle_z = 0.0
+    robot_angle = 0.0
+    robot_scale = 1.0
 
-    scale_value = 1.0
+    right_arm_angle = 0.0
 
 
 def process_input(window):
-    global tx
-    global ty
-    global tz
+    global robot_x
+    global robot_y
+    global robot_z
 
-    global angle_x
-    global angle_y
-    global angle_z
+    global robot_angle
+    global robot_scale
 
-    global scale_value
+    global right_arm_angle
 
     movement_speed = 0.02
     rotation_speed = 1.0
@@ -526,94 +671,82 @@ def process_input(window):
         window,
         glfw.KEY_RIGHT
     ) == glfw.PRESS:
-        tx += movement_speed
+        robot_x += movement_speed
 
     if glfw.get_key(
         window,
         glfw.KEY_LEFT
     ) == glfw.PRESS:
-        tx -= movement_speed
+        robot_x -= movement_speed
 
 
     if glfw.get_key(
         window,
         glfw.KEY_UP
     ) == glfw.PRESS:
-        ty += movement_speed
+        robot_y += movement_speed
 
     if glfw.get_key(
         window,
         glfw.KEY_DOWN
     ) == glfw.PRESS:
-        ty -= movement_speed
+        robot_y -= movement_speed
 
     if glfw.get_key(
         window,
         glfw.KEY_W
     ) == glfw.PRESS:
-        tz += movement_speed
+        robot_z += movement_speed
 
     if glfw.get_key(
         window,
         glfw.KEY_S
     ) == glfw.PRESS:
-        tz -= movement_speed
-
-    if glfw.get_key(
-        window,
-        glfw.KEY_I
-    ) == glfw.PRESS:
-        angle_x += rotation_speed
-
-    if glfw.get_key(
-        window,
-        glfw.KEY_K
-    ) == glfw.PRESS:
-        angle_x -= rotation_speed
+        robot_z -= movement_speed
 
 
     if glfw.get_key(
         window,
         glfw.KEY_J
     ) == glfw.PRESS:
-        angle_y += rotation_speed
+        robot_angle += rotation_speed
 
     if glfw.get_key(
         window,
         glfw.KEY_L
     ) == glfw.PRESS:
-        angle_y -= rotation_speed
-
-
-    if glfw.get_key(
-        window,
-        glfw.KEY_U
-    ) == glfw.PRESS:
-        angle_z += rotation_speed
-
-    if glfw.get_key(
-        window,
-        glfw.KEY_O
-    ) == glfw.PRESS:
-        angle_z -= rotation_speed
+        robot_angle -= rotation_speed
 
 
     if glfw.get_key(
         window,
         glfw.KEY_EQUAL
     ) == glfw.PRESS:
-        scale_value += scale_speed
+        robot_scale += scale_speed
 
     if glfw.get_key(
         window,
         glfw.KEY_MINUS
     ) == glfw.PRESS:
-        scale_value -= scale_speed
+        robot_scale -= scale_speed
 
-        scale_value = max(
-            scale_value,
+        robot_scale = max(
+            robot_scale,
             0.1
         )
+
+
+    if glfw.get_key(
+        window,
+        glfw.KEY_I
+    ) == glfw.PRESS:
+        right_arm_angle += rotation_speed
+
+    if glfw.get_key(
+        window,
+        glfw.KEY_K
+    ) == glfw.PRESS:
+        right_arm_angle -= rotation_speed
 
 
     if glfw.get_key(
@@ -624,6 +757,13 @@ def process_input(window):
 
 
 def main():
+    global model_location
+    global view_location
+    global projection_location
+
+    global face_vao
+    global edge_vao
+
     window = create_window()
 
     program = create_shader_program()
@@ -684,29 +824,21 @@ def main():
 
     print()
     print("======================================")
-    print("Transformações 3D - Cubo Colorido")
+    print("Robô 3D - Transformações")
     print("======================================")
     print()
-    print("Cores das faces:")
-    print("  Frente    -> amarelo")
-    print("  Trás      -> vermelho")
-    print("  Esquerda  -> azul")
-    print("  Direita   -> laranja")
-    print("  Topo      -> roxo")
-    print("  Base      -> verde")
-    print("  Arestas   -> branco")
-    print()
-    print("Translação:")
+    print("Movimento do robô:")
     print("  Setas    -> X e Y")
     print("  W / S    -> Z")
     print()
-    print("Rotação:")
-    print("  I / K    -> eixo X")
+    print("Rotação do robô:")
     print("  J / L    -> eixo Y")
-    print("  U / O    -> eixo Z")
     print()
-    print("Escala:")
+    print("Escala do robô:")
     print("  + / -    -> aumentar/diminuir")
+    print()
+    print("Braço direito:")
+    print("  I / K    -> girar no ombro")
     print()
     print("Outros:")
     print("  Espaço   -> reset")
@@ -730,48 +862,7 @@ def main():
             GL_DEPTH_BUFFER_BIT
         )
 
-
-        T = translation_matrix(
-            tx,
-            ty,
-            tz
-        )
-
-        S = scale_matrix(
-            scale_value,
-            scale_value,
-            scale_value
-        )
-
-        Rx = rotation_x_matrix(
-            angle_x
-        )
-
-        Ry = rotation_y_matrix(
-            angle_y
-        )
-
-        Rz = rotation_z_matrix(
-            angle_z
-        )
-
-
-	#ADICIONAR MATRIZ DE TRANSFORMACAO COMPOSTA
-
-        model = (T 
-        @ Rz
-        @ Ry
-        @ Rx
-        @ S)
-	
         glUseProgram(program)
-
-        glUniformMatrix4fv(
-            model_location,
-            1,
-            GL_TRUE,
-            model
-        )
 
         glUniformMatrix4fv(
             view_location,
@@ -787,45 +878,11 @@ def main():
             projection
         )
 
-        glEnable(GL_POLYGON_OFFSET_FILL)
-
-        glPolygonOffset(
-            1.0,
-            1.0
-        )
-
-        glBindVertexArray(
-            face_vao
-        )
-
-        glDrawArrays(
-            GL_TRIANGLES,
-            0,
-            len(face_vertices) // 6
-        )
-
-        glBindVertexArray(0)
-
-        glDisable(
-            GL_POLYGON_OFFSET_FILL
-        )
-
-
-        glBindVertexArray(
-            edge_vao
-        )
-
-        glDrawArrays(
-            GL_LINES,
-            0,
-            len(edge_vertices) // 6
-        )
-
-        glBindVertexArray(0)
+        draw_robot()
 
         glfw.swap_buffers(window)
         glfw.poll_events()
-    1.0
+
     glDeleteVertexArrays(
         1,
         [face_vao]
